@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34511.98
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Teste_Felipe_Santana_CapiGemini", "Teste_Felipe_Santana_CapiGemini.csproj", "{B7E8F2FC-E197-4AE7-89BB-2616066E9804}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Teste_Felipe_Santana_CapGemini_UnitTest", "..\Teste_Felipe_Santana_CapGemini_Test\Teste_Felipe_Santana_CapGemini_UnitTest.csproj", "{DA55EA90-EE67-4B6F-B500-3C8E3790A64E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B7E8F2FC-E197-4AE7-89BB-2616066E9804}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7E8F2FC-E197-4AE7-89BB-2616066E9804}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7E8F2FC-E197-4AE7-89BB-2616066E9804}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7E8F2FC-E197-4AE7-89BB-2616066E9804}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA55EA90-EE67-4B6F-B500-3C8E3790A64E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA55EA90-EE67-4B6F-B500-3C8E3790A64E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA55EA90-EE67-4B6F-B500-3C8E3790A64E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA55EA90-EE67-4B6F-B500-3C8E3790A64E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {352E01D0-EBC8-4D6D-A010-A4D529E5425B}
+	EndGlobalSection
+EndGlobal
