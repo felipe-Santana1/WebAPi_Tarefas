@@ -25,7 +25,7 @@ O usuário será direcionado para a tela inicial do sistema, onde poderá escolh
 2. Abra a Soluction</br></br>
 3. Execute o projeto</br></br>
 4. No arquivo  `appsettings.json`, altere para sua string de conexão.</br>
-5. No terminal do Package Mananger Console, rode o comando `dotnet ef database update`.</br>
+5. No terminal do Package Mananger Console, rode o comando `dotnet ef database update`, irá gerar a base dados.</br>
 
 </br></br>
 ###<h2>TECNOLOGIAS</h2>
