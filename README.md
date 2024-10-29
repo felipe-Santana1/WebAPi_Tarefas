@@ -1,5 +1,5 @@
 ### <h2>CRUD USUARIO/TAREFAS
-O projeto tem como objetivo possibilitar o cadastro e a exclusão de usuários e tarefas.
+O projeto tem como objetivo possibilitar o cadastro e a exclusão de usuários e tarefas, onde só é possivel realizar uma exclusão causa o usuário não tenha NENHUMA tarefa em seu NOME.
 
 ![Youtube](https://img.shields.io/badge/-Youtube-000?style=for-the-badge&logo=Youtube)</br> 
 <p>Vídeo demonstrativo destacando as funcionalidades e a usabilidade do sistema. </p>
