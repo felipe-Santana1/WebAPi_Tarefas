@@ -42,8 +42,8 @@ public class Program
 
         builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
         builder.Services.AddScoped<ITarefaRepositorio, TarefaRepositorio>();
-        builder.Services.AddScoped<ITarefaService, TarefaService>();
-        builder.Services.AddScoped<IUsuarioService, UsuarioService>();
+        builder.Services.AddScoped<ITarefaServico, TarefaServico>();
+        builder.Services.AddScoped<IUsuarioServico, UsuarioServico>();
 
         //FluentValidation
         builder.Services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());

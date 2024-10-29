@@ -6,11 +6,11 @@ using Teste_Felipe_Santana_CapiGemini.Service.Interfaces;
 
 namespace Teste_Felipe_Santana_CapiGemini.Service;
 
-public class UsuarioService : IUsuarioService
+public class UsuarioServico : IUsuarioServico
 {
     private readonly IUsuarioRepositorio _usuarioRepositorio;
     private readonly IMapper _mapper;
-    public UsuarioService(IUsuarioRepositorio usuarioRepositorio, IMapper mapper)
+    public UsuarioServico(IUsuarioRepositorio usuarioRepositorio, IMapper mapper)
     {
         _usuarioRepositorio = usuarioRepositorio;
         _mapper = mapper;
@@ -23,9 +23,9 @@ public class UsuarioService : IUsuarioService
         return _mapper.Map<UsuarioDto>(result);
     }
 
-    public Task<bool> ApagarUsuario(int id)
+    public async Task<bool> ApagarUsuario(int id)
     {
-        throw new NotImplementedException();
+        return await _usuarioRepositorio.ApagarUsuario(id);
     }
 
     public async Task<UsuarioDto> AtualizarUsuario(UsuarioDto request, int id)

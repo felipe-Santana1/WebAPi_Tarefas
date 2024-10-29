@@ -6,12 +6,12 @@ using Teste_Felipe_Santana_CapiGemini.Service.Interfaces;
 
 namespace Teste_Felipe_Santana_CapiGemini.Service;
 
-public class TarefaService : ITarefaService
+public class TarefaServico : ITarefaServico
 {
     private readonly ITarefaRepositorio _tarefaRepositorio;
     private readonly IMapper _mapper;
 
-    public TarefaService(ITarefaRepositorio tarefaRepositorio, IMapper mapper)
+    public TarefaServico(ITarefaRepositorio tarefaRepositorio, IMapper mapper)
     {
         _tarefaRepositorio = tarefaRepositorio;
         _mapper = mapper;

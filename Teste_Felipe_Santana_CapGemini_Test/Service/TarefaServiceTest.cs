@@ -9,7 +9,7 @@ namespace Teste_Felipe_Santana_CapGemini_UnitTest.Service;
 
 public class TarefaServiceTest
 {
-    private TarefaService _service;
+    private TarefaServico _service;
     private readonly Mock<ITarefaRepositorio> _repositorioFake = new();
     private readonly Mock<IMapper> _mapper = new();
 
@@ -23,7 +23,7 @@ public class TarefaServiceTest
         _mapper.Setup(m => m.Map<TarefaDto>(It.IsAny<TarefaModel>())).Returns(new TarefaDto());
         _mapper.Setup(m => m.Map<TarefaModel>(It.IsAny<TarefaDto>())).Returns(new TarefaModel());
 
-        _service = new TarefaService(_repositorioFake.Object, _mapper.Object);
+        _service = new TarefaServico(_repositorioFake.Object, _mapper.Object);
 
         // Act
         var result = await _service.Adicionar(new TarefaDto());
@@ -41,7 +41,7 @@ public class TarefaServiceTest
     {
         // Arrange
         _repositorioFake.Setup(s => s.Apagar(It.IsAny<int>())).ReturnsAsync(true);
-        _service = new TarefaService(_repositorioFake.Object, _mapper.Object);
+        _service = new TarefaServico(_repositorioFake.Object, _mapper.Object);
 
         // Act
         var result = await _service.Apagar(1);
@@ -61,7 +61,7 @@ public class TarefaServiceTest
         _mapper.Setup(m => m.Map<TarefaDto>(It.IsAny<TarefaModel>())).Returns(new TarefaDto());
         _mapper.Setup(m => m.Map<TarefaModel>(It.IsAny<TarefaDto>())).Returns(new TarefaModel());
 
-        _service = new TarefaService(_repositorioFake.Object, _mapper.Object);
+        _service = new TarefaServico(_repositorioFake.Object, _mapper.Object);
 
         // Act
         var result = await _service.Atualizar(new TarefaDto(), 1);
@@ -84,7 +84,7 @@ public class TarefaServiceTest
         _repositorioFake.Setup(s => s.BuscarPorID(It.IsAny<int>())).ReturnsAsync(tarefaFakeReturn);
         _mapper.Setup(m => m.Map<TarefaDto>(It.IsAny<TarefaModel>())).Returns(tarefaDtoFakeReturn);
 
-        _service = new TarefaService(_repositorioFake.Object, _mapper.Object);
+        _service = new TarefaServico(_repositorioFake.Object, _mapper.Object);
 
         // Act
         var result = await _service.BuscarPorID(10);
@@ -106,7 +106,7 @@ public class TarefaServiceTest
         _repositorioFake.Setup(s => s.BuscarTodasTarefas()).ReturnsAsync(tarefasFakeReturn);
         _mapper.Setup(m => m.Map<ICollection<TarefaDto>>(It.IsAny<ICollection<TarefaModel>>())).Returns(tarefasDtoFakeReturn);
 
-        _service = new TarefaService(_repositorioFake.Object, _mapper.Object);
+        _service = new TarefaServico(_repositorioFake.Object, _mapper.Object);
 
         // Act
         var result = await _service.BuscarTodasTarefas();

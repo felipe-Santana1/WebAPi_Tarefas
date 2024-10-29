@@ -2,7 +2,7 @@
 
 namespace Teste_Felipe_Santana_CapiGemini.Service.Interfaces;
 
-public interface ITarefaService
+public interface ITarefaServico
 {
     Task<ICollection<TarefaDto>> BuscarTodasTarefas();
     Task<TarefaDto> BuscarPorID(int id);

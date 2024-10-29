@@ -18,9 +18,9 @@ namespace Teste_Felipe_Santana_CapiGemini.Controllers;
 [ProducesResponseType(typeof(string), StatusCodes.Status500InternalServerError)]
 public class UsuarioController : ControllerBase
 {
-    private readonly IUsuarioService _usuarioService;
+    private readonly IUsuarioServico _usuarioService;
     private readonly IValidator<UsuarioDto> _validator;
-    public UsuarioController(IUsuarioService usuarioService, IValidator<UsuarioDto> validator)
+    public UsuarioController(IUsuarioServico usuarioService, IValidator<UsuarioDto> validator)
     {
         _usuarioService = usuarioService;
         _validator = validator;

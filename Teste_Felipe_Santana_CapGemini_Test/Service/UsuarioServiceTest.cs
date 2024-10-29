@@ -9,7 +9,7 @@ namespace Teste_Felipe_Santana_CapGemini_UnitTest.Service;
 
 public class UsuarioServiceTest
 {
-    private UsuarioService _service;
+    private UsuarioServico _service;
     private readonly Mock<IUsuarioRepositorio> _repositorioFake = new();
     private readonly Mock<IMapper> _mapper = new();
 
@@ -24,7 +24,7 @@ public class UsuarioServiceTest
         _mapper.Setup(s => s.Map<ICollection<UsuarioDto>>(It.IsAny<ICollection<UsuarioModel?>>()))
         .Returns(usuarioDtoFakeReturn);
 
-        _service = new UsuarioService(_repositorioFake.Object, _mapper.Object);
+        _service = new UsuarioServico(_repositorioFake.Object, _mapper.Object);
 
         //Act
         var result = await _service.BuscarTodosUsuarios();
@@ -44,7 +44,7 @@ public class UsuarioServiceTest
         UsuarioDto usuarioDtoFakeReturn = new UsuarioDto() { Nome = "Lorem", Id = 10, Email = "Lorem" };
         _repositorioFake.Setup(s => s.BuscarPorID(It.IsAny<int>())).ReturnsAsync(usuarioFakeReturn);
         _mapper.Setup(s => s.Map<UsuarioDto>(It.IsAny<UsuarioModel>())).Returns(usuarioDtoFakeReturn);
-        _service = new UsuarioService(_repositorioFake.Object, _mapper.Object);
+        _service = new UsuarioServico(_repositorioFake.Object, _mapper.Object);
         //Act
         var result = await _service.BuscarPorID(10);
         //Assert
@@ -62,7 +62,7 @@ public class UsuarioServiceTest
         _repositorioFake.Setup(s => s.AdicionarUsuario(It.IsAny<UsuarioModel>())).ReturnsAsync(usuarioFakeReturn);
         _mapper.Setup(s => s.Map<UsuarioDto>(It.IsAny<UsuarioModel>())).Returns(new UsuarioDto());
         _mapper.Setup(s => s.Map<UsuarioModel>(It.IsAny<UsuarioDto>())).Returns(new UsuarioModel());
-        _service = new UsuarioService(_repositorioFake.Object, _mapper.Object);
+        _service = new UsuarioServico(_repositorioFake.Object, _mapper.Object);
         //Act
         var result = await _service.AdicionarUsuario(new Teste_Felipe_Santana_CapiGemini.Dto.UsuarioDto());
         //Assert
@@ -81,7 +81,7 @@ public class UsuarioServiceTest
         _repositorioFake.Setup(s => s.AtualizarUsuario(It.IsAny<UsuarioModel>(), It.IsAny<int>())).ReturnsAsync(usuarioFakeReturn);
         _mapper.Setup(s => s.Map<UsuarioDto>(It.IsAny<UsuarioModel>())).Returns(new UsuarioDto());
         _mapper.Setup(s => s.Map<UsuarioModel>(It.IsAny<UsuarioDto>())).Returns(new UsuarioModel());
-        _service = new UsuarioService(_repositorioFake.Object, _mapper.Object);
+        _service = new UsuarioServico(_repositorioFake.Object, _mapper.Object);
         //Act
         var result = await _service.AtualizarUsuario(new Teste_Felipe_Santana_CapiGemini.Dto.UsuarioDto(), 0);
         //Assert
@@ -98,7 +98,7 @@ public class UsuarioServiceTest
         //Arrange
         UsuarioModel usuarioFakeReturn = new UsuarioModel();
         _repositorioFake.Setup(s => s.ApagarUsuario(It.IsAny<int>())).ReturnsAsync(true);
-        _service = new UsuarioService(_repositorioFake.Object, _mapper.Object);
+        _service = new UsuarioServico(_repositorioFake.Object, _mapper.Object);
         //Act
         var result = await _service.ApagarUsuario(0);
         //Assert

@@ -2,7 +2,7 @@
 
 namespace Teste_Felipe_Santana_CapiGemini.Service.Interfaces;
 
-public interface IUsuarioService
+public interface IUsuarioServico
 {
     Task<ICollection<UsuarioDto?>> BuscarTodosUsuarios();
     Task<UsuarioDto> BuscarPorID(int id);

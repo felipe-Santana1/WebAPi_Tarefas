@@ -18,10 +18,10 @@ namespace Teste_Felipe_Santana_CapiGemini.Controllers;
 [ProducesResponseType(typeof(string), StatusCodes.Status500InternalServerError)]
 public class TarefaController : ControllerBase
 {
-    private readonly ITarefaService _tarefaService;
+    private readonly ITarefaServico _tarefaService;
     private readonly IValidator<TarefaDto> _validator;
 
-    public TarefaController(ITarefaService tarefaService, IValidator<TarefaDto> validator)
+    public TarefaController(ITarefaServico tarefaService, IValidator<TarefaDto> validator)
     {
         _tarefaService = tarefaService;
         _validator = validator;
