@@ -9,10 +9,12 @@ namespace Teste_Felipe_Santana_CapiGemini.Service;
 public class UsuarioServico : IUsuarioServico
 {
     private readonly IUsuarioRepositorio _usuarioRepositorio;
+    private readonly ITarefaRepositorio _tarefaRepositorio;
     private readonly IMapper _mapper;
-    public UsuarioServico(IUsuarioRepositorio usuarioRepositorio, IMapper mapper)
+    public UsuarioServico(IUsuarioRepositorio usuarioRepositorio, ITarefaRepositorio tarefaRepositorio, IMapper mapper)
     {
         _usuarioRepositorio = usuarioRepositorio;
+        _tarefaRepositorio = tarefaRepositorio;
         _mapper = mapper;
     }
 
@@ -25,7 +27,11 @@ public class UsuarioServico : IUsuarioServico
 
     public async Task<bool> ApagarUsuario(int id)
     {
-        return await _usuarioRepositorio.ApagarUsuario(id);
+        ICollection<TarefaModel> result = await _tarefaRepositorio.BuscarTarefasUsuario(id);
+        if (result != null && result.Any())
+            return false;
+        else
+            return await _usuarioRepositorio.ApagarUsuario(id);
     }
 
     public async Task<UsuarioDto> AtualizarUsuario(UsuarioDto request, int id)

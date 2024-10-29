@@ -41,6 +41,11 @@ public class TarefaServico : ITarefaServico
         return _mapper.Map<TarefaDto>(result);
     }
 
+    public async Task<ICollection<TarefaDto>> BuscarTarefasUsuario(int idUsuario)
+    {
+        return _mapper.Map<ICollection<TarefaDto>>(await _tarefaRepositorio.BuscarTarefasUsuario(idUsuario));
+    }
+
     public async Task<ICollection<TarefaDto>> BuscarTodasTarefas()
     {
         ICollection<TarefaModel> result = await _tarefaRepositorio.BuscarTodasTarefas();

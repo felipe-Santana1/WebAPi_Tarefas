@@ -60,4 +60,8 @@ public class TarefaRepositorio : ITarefaRepositorio
 
     }
 
+    public async Task<ICollection<TarefaModel>> BuscarTarefasUsuario(int idUsuario)
+    {
+        return await _dbContext.Tarefas.Where(x=> x.UsuarioID == idUsuario).ToListAsync();   
+    }
 }
