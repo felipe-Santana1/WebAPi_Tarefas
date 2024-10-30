@@ -11,7 +11,8 @@ on:
 env:
   DOTNET_VERSION: '8.0'
   PROJECT_PATH: ./Teste_Felipe_Santana_CapiGemini/Teste_Felipe_Santana_CapiGemini.csproj
-  PROJECT_TESTE_PATH: ./Teste_Felipe_Santana_CapGemini_Test/Teste_Felipe_Santana_CapGemini_UnitTest.csproj
+  PROJECT_TESTE_PATH: ./Teste_Felipe_Santana_CapGemini_Test/bin/Debug/net8.0/Teste_Felipe_Santana_CapGemini_UnitTest.dll
+  
     
 jobs:
   build:
