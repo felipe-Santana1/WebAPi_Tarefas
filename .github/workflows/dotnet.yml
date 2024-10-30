@@ -11,6 +11,7 @@ on:
 env:
   DOTNET_VERSION: '8.0'
   PROJECT_PATH: ./Teste_Felipe_Santana_CapiGemini/Teste_Felipe_Santana_CapiGemini.csproj
+  PROJECT_TESTE_PATH: ./Teste_Felipe_Santana_CapGemini_Test/Teste_Felipe_Santana_CapGemini_UnitTest.csproj
     
 jobs:
   build:
@@ -24,8 +25,8 @@ jobs:
       with:
         dotnet-version: 8.0.x
     - name: Restore dependencies
-      run: dotnet restore ${{env.PROJECT_PATH}}
+      run: dotnet restore ${{env.PROJECT_PATH}} 
     - name: Build
       run: dotnet build ${{env.PROJECT_PATH}} -c Release --no-restore
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test ${{env.PROJECT_TESTE_PATH}} --no-build --verbosity normal
